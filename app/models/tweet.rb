@@ -24,8 +24,7 @@ class Tweet < ApplicationRecord
     require 'x'
     require 'json'
     
-    my_body = body
-    my_body = '{"text": "' + my_body + "\"}"
+    my_body = '{"text": "' + body + "\"}"
     #'{"text":"my_text"}
     tweet = twitter_account.client.post("tweets", my_body)
     update(tweet_id: tweet["data"]["id"])
