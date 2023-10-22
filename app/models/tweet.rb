@@ -21,9 +21,7 @@ class Tweet < ApplicationRecord
   end
 
   def publish_to_twitter
-    require 'x'
-    require 'json'
-    
+   
     my_body = '{"text": "' + body + "\"}"
     #'{"text":"my_text"}
     tweet = twitter_account.client.post("tweets", my_body)
